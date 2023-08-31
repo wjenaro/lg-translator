@@ -1,0 +1,122 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.translator-class{
+    width: 50%;
+    height: auto;
+   }
+.text-input{
+    width: 100%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Apply basic styles to the textarea */
+/* Style the outer container */
+.t-1 {
+    align-items: center;
+    float: left;
+    margin-right: 20px; 
+  }
+  .t-2{
+    align-items: center;
+    float: right;
+    align-items: center;
+  }
+  /* Style the select element */
+  .t-s {
+    display:block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+  }
+  
+.t-text {
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  /* Apply hover effect */
+  .t-text:hover {
+    border-color: #66aaff;
+  }
+  
+  /* Allow text to wrap within the textarea */
+  .t-text {
+    white-space: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  /* Add a subtle box-shadow for depth */
+  .t-text {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for when the textarea is focused */
+  .t-text:focus {
+    outline: none;
+    border-color: #3366cc;
+    box-shadow: 0 2px 6px rgba(51, 102, 204, 0.4);
+  }
+  
+.s-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.s-input input[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #3366cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Apply hover effect to the submit button */
+  .s-input input[type="submit"]:hover {
+    background-color: #28b128;
+  }
+  /* Style the i element */
+i {
+    font-style: normal; /* Reset default italic style */
+    font-size: 18px;
+    font-weight: bold;
+    color: #3366cc;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Apply hover effect to the i element */
+  i:hover {
+    transform: scale(1.2);
+  }
+  

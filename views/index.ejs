@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language translation</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="translator-class">
+            <form method="POST" action="/translate">
+                <div class="text-input">
+                    <div class="t-1">
+                       
+                        <select class="t-s" name="lang1">
+                                
+                                 <% const languageMap = {
+  'af': 'Afrikaans',
+  'ak': 'Akan',
+  'am': 'Amharic',
+  'ar': 'Arabic',
+  'as': 'Assamese',
+  'ay': 'Aymara',
+  'az': 'Azerbaijani',
+  'be': 'Belarusian',
+  'bg': 'Bulgarian',
+  'bh': 'Bihari',
+  'bm': 'Bambara',
+  'bn': 'Bengali',
+  'bs': 'Bosnian',
+  'ca': 'Catalan',
+  'ceb': 'Cebuano',
+  'ckb': 'Kurdish (Sorani)',
+  'co': 'Corsican',
+  'cs': 'Czech',
+  'cy': 'Welsh',
+  'da': 'Danish',
+  'de': 'German',
+  'doi': 'Dogri',
+  'dv': 'Dhivehi',
+  'ee': 'Ewe',
+  'el': 'Greek',
+  'en': 'English',
+  'eo': 'Esperanto',
+  'es': 'Spanish',
+  'et': 'Estonian',
+  'eu': 'Basque',
+  'fa': 'Persian',
+  'fi': 'Finnish',
+  'fr': 'French',
+  'fy': 'Frisian',
+  'ga': 'Irish',
+  'gd': 'Gaelic (Scottish)',
+  'gl': 'Galician',
+  'gn': 'Guarani',
+  'gom': 'Konkani',
+  'gu': 'Gujarati',
+  'ha': 'Hausa',
+  'haw': 'Hawaiian',
+  'he': 'Hebrew',
+  'hi': 'Hindi',
+  'hmn': 'Hmong',
+  'hr': 'Croatian',
+  'ht': 'Haitian Creole',
+  'hu': 'Hungarian',
+  'hy': 'Armenian',
+  'id': 'Indonesian',
+  'ig': 'Igbo',
+  'ilo': 'Ilokano',
+  'is': 'Icelandic',
+  'it': 'Italian',
+  'iw': 'Hebrew (Yiddish)',
+  'ja': 'Japanese',
+  'jv': 'Javanese',
+  'jw': 'Javanese (Old)',
+  'ka': 'Georgian',
+  'kk': 'Kazakh',
+  'km': 'Khmer',
+  'kn': 'Kannada',
+  'ko': 'Korean',
+  'kri': 'Krio',
+  'ku': 'Kurdish',
+  'ky': 'Kyrgyz',
+  'la': 'Latin',
+  'lb': 'Luxembourgish',
+  'lg': 'Luganda',
+  'ln': 'Lingala',
+  'lo': 'Lao',
+  'lt': 'Lithuanian',
+  'lus': 'Lushai',
+  'lv': 'Latvian',
+  'mai': 'Maithili',
+  'mg': 'Malagasy',
+  'mi':  'Maori',
+  'mk': 'Macedonian',
+  'ml': 'Malayalam',
+  'mn': 'Mongolian',
+  'mni-Mtei': 'Manipuri (Mtei)',
+  'mr': 'Marathi',
+  'ms': 'Malay',
+  'mt': 'Maltese',
+  'my': 'Burmese',
+  'ne': 'Nepali',
+  'nl': 'Dutch',
+  'no': 'Norwegian',
+  'nso': 'Northern Sotho',
+  'ny': 'Nyanja',
+  'om': 'Oromo',
+  'or': 'Oriya',
+  'pa': 'Punjabi',
+  'pl': 'Polish',
+  'ps': 'Pashto',
+  'pt': 'Portuguese',
+  'qu': 'Quechua',
+  'ro': 'Romanian',
+  'ru': 'Russian',
+  'rw': 'Kinyarwanda',
+  'sa': 'Sanskrit',
+  'sd': 'Sindhi',
+  'si': 'Sinhala',
+  'sk': 'Slovak',
+  'sl': 'Slovenian',
+  'sm': 'Samoan',
+  'sn': 'Shona',
+  'so': 'Somali',
+  'sq': 'Albanian',
+  'sr': 'Serbian',
+  'st': 'Southern Sotho',
+  'su': 'Sundanese',
+  'sv': 'Swedish',
+  'sw': 'Swahili',
+  'ta': 'Tamil',
+  'te': 'Telugu',
+  'tg': 'Tajik',
+  'th': 'Thai',
+  'ti': 'Tigrinya',
+  'tk': 'Turkmen',
+  'tl': 'Tagalog',
+  'tr': 'Turkish',
+  'ts': 'Tsonga',
+  'tt': 'Tatar',
+  'ug': 'Uyghur',
+  'uk': 'Ukrainian',
+  'ur': 'Urdu',
+  'uz': 'Uzbek',
+  'vi': 'Vietnamese',
+  'xh': 'Xhosa',
+  'yi': 'Yiddish',
+  'yo': 'Yoruba',
+  'zh': 'Chinese',
+  'zh-CN': 'Chinese (Simplified)',
+  'zh-TW': 'Chinese (Traditional)',
+};
+                                    
+                                    for (let i = 0; i < lg.length; i++) { %>
+                                   <option value="<%= lg[i].language %>"><%= languageMap[lg[i].language] %> </option>
+                            <% } %>
+                        </select>
+                    
+                        <textarea class="t-text" name="lg1"></textarea>
+                    </div>
+                    
+                    <i>>></i>
+                    <div class="t-2">
+                        <select class="t-s" name="lang2">
+                            <%
+                                 for (let i = 0; i < lg.length; i++) { %>
+                                <option value="<%= lg[i].language %>"><%= languageMap[lg[i].language] %></option>
+                            <% } %>
+                        </select>
+                        <textarea class="t-text" name="lg2"><%= translatedLanguage %></textarea>
+                    </div>
+                    
+                </div>
+                <div class="s-input"><input type="submit" value="Translate >>"></div>
+                
+            </form>
+            </div>
+    </div>
+</body>
+</html>
